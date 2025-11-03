@@ -1,8 +1,8 @@
 // general users endpoints
 const express = require('express');
-let books = require("../data/booksdb.js");
-let isValid = require("./auth_users.js").isValid;
-let users = require("./auth_users.js").users;
+let books = require("../data/books_data.js");
+let isValid = require("./customer_routes.js").isValid;
+let users = require("./customer_routes.js").users;
 const axios = require('axios');
 
 const public_users = express.Router();

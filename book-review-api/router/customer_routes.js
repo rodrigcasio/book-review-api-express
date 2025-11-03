@@ -1,7 +1,7 @@
 // endpoints for registered and authenticated with JWT 
 const express = require('express');
 const jwt = require('jsonwebtoken');
-let books = require("../data/booksdb.js");
+let books = require("../data/books_data.js");
 const regd_users = express.Router();
 
 let users = [];
