@@ -6,7 +6,7 @@ const regd_users = express.Router();
 
 let users = [];
 
-const isValid = (username) => { // 1 for `/register`
+const isValid = (username) => { // for `/register`
   let userWithSameName = users.filter((user) => {
     return user.userName === username;
   });
@@ -18,7 +18,7 @@ const isValid = (username) => { // 1 for `/register`
   }
 }
 
-const authenticatedUser = (username, password) => { // 2. for `/login`
+const authenticatedUser = (username, password) => { // for `/login`
   const validUser = users.filter((user) => {
     return (user.username === username && user.password === password);    // returns array with existing user (needed for ''/login')
   });
@@ -51,8 +51,7 @@ regd_users.post("/login", (req, res) => {
   }
 });
 
-// Add a book review  // 9.
-regd_users.put("/auth/review/:isbn", (req, res) => {
+regd_users.put("/auth/review/:isbn", (req, res) => {  // Add a book review.
   const isbn = req.params.isbn;
   const book = books[isbn];
 
@@ -78,7 +77,7 @@ regd_users.put("/auth/review/:isbn", (req, res) => {
 });
 
 
-regd_users.delete('/auth/review/:isbn', (req, res) => {   // 10.
+regd_users.delete('/auth/review/:isbn', (req, res) => {
   const isbn = req.params.isbn;
   const book = books[isbn];
 

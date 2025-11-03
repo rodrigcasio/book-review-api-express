@@ -25,7 +25,7 @@ const findBookByProperty = (object, property, propertyValue) => { // obtains the
   return null; // if not book found
 }
 
-public_users.post('/register', (req, res) => {   // 1.1
+public_users.post('/register', (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
 
@@ -58,8 +58,7 @@ const getAllBooks = (books) => {  // for '/' endpoint.
   });
 }
 
-// Get the book list available in the shop    // 4. 10. Implementing async/await with custom Promise 
-public_users.get('/', async (req, res) => {
+public_users.get('/', async (req, res) => {     // Getting all books from db. Implementing async/await with custom Promise 
   const booksdb = books;
 
   try {
@@ -77,8 +76,7 @@ public_users.get('/', async (req, res) => {
   }
 });
 
-// Get book details based on ISBN         // 5. | 11. implementing async/await with Axios
-public_users.get('/isbn/:isbn', async (req, res) => {
+public_users.get('/isbn/:isbn', async (req, res) => {  // Getting book details based on ISBN, and implementing async/await with Axios
   const isbn = req.params.isbn;
   
   let booksUrl = `http://localhost:5000/`;
@@ -107,7 +105,7 @@ public_users.get('/isbn/:isbn', async (req, res) => {
   }
 });
 
-public_users.get('/author/:author', async (req, res) => {   // Get book details based on author 6.  | 12. implementing async/await with Axios
+public_users.get('/author/:author', async (req, res) => {   // Getting book details based on author, and implementing async/await with Axios
   const author = req.params.author;
 
   const booksUrl = `http://localhost:5000/`;
@@ -137,7 +135,7 @@ public_users.get('/author/:author', async (req, res) => {   // Get book details 
 });
 
 
-public_users.get('/title/:title', async (req, res) => {  // Get all books based on title 7. |  13. implementing async/await with Axios
+public_users.get('/title/:title', async (req, res) => {  // Getting all books based on title and implementing async/await with Axios
   const title = req.params.title;
 
   const booksUrl = `http://localhost:5000/`
