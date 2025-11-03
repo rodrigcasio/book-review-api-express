@@ -1,3 +1,4 @@
+// endpoints for registered and authenticated with JWT 
 const express = require('express');
 const jwt = require('jsonwebtoken');
 let books = require("../data/booksdb.js");
